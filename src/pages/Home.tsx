@@ -309,7 +309,7 @@ export default function Home() {
         <div className="relative flex overflow-x-hidden">
           <motion.div 
             className="flex py-4 gap-16 whitespace-nowrap"
-            animate={{ x: [0, -1000] }}
+            animate={{ x: ["0%", "-50%"] }}
             transition={{ 
               x: {
                 repeat: Infinity,
