@@ -1191,25 +1191,26 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <Card className="p-8 shadow-lg border-0 bg-secondary">
-                <form className="space-y-6" onSubmit={(e) => {
-                  e.preventDefault();
-                  handleCTAClick('form-contato');
-                  // Adicione aqui a lógica de envio do formulário
-                  alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-                }}>
+                <form 
+                  className="space-y-6" 
+                  action="https://api.web3forms.com/submit" 
+                  method="POST"
+                >
+                  <input type="hidden" name="access_key" value="f35f0e95-4e47-4dc7-9abf-3054ecea096f" />
+                  
                   <div className="space-y-2">
                     <Label htmlFor="name">Nome Completo</Label>
-                    <Input id="name" placeholder="Seu nome" required />
+                    <Input id="name" name="name" placeholder="Seu nome" required />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="email">Email Corporativo</Label>
-                    <Input id="email" type="email" placeholder="nome@empresa.com" required />
+                    <Input id="email" name="email" type="email" placeholder="nome@empresa.com" required />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="message">Mensagem</Label>
-                    <Textarea id="message" placeholder="Como podemos ajudar?" className="min-h-[120px]" required />
+                    <Textarea id="message" name="message" placeholder="Como podemos ajudar?" className="min-h-[120px]" required />
                   </div>
                   
                   <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white font-semibold h-12">
