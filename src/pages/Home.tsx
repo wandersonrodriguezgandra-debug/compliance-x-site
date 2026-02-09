@@ -1405,7 +1405,7 @@ export default function Home() {
       </footer>
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/5531986937268?text=Ola%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20sistema%20COMPLIANCE%20X"
+        href="https://wa.me/5531986937268?text=Ol%C3%A1!%20Acessei%20o%20site%20do%20Compliance%20X%20e%20gostaria%20de%20saber%20como%20a%20plataforma%20pode%20ajudar%20no%20meu%20neg%C3%B3cio."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 hover:bg-green-600"
