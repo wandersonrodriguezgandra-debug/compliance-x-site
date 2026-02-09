@@ -87,8 +87,6 @@ function Counter({ from, to }: { from: number; to: number }) {
 
 import { useTheme } from "@/contexts/ThemeContext";
 
-const poppinsStyle = { fontFamily: "'Poppins', sans-serif" };
-
 export default function Home() {
   const analytics = useAnalyticsContext();
   const { theme, setTheme } = useTheme();
@@ -116,13 +114,13 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen bg-background font-inter">
       {/* Header/Navigation */}
       <header className="sticky top-0 z-50 bg-background border-b border-border">
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
             <Logo className="w-10 h-10" />
-            <span className="font-bold text-lg text-primary" style={poppinsStyle}>
+            <span className="font-bold text-lg text-primary font-poppins">
               Compliance X
             </span>
           </div>
@@ -195,7 +193,7 @@ export default function Home() {
               </SheetTrigger>
               <SheetContent>
                 <SheetHeader>
-                  <SheetTitle className="text-left font-bold text-primary" style={poppinsStyle}>
+                  <SheetTitle className="text-left font-bold text-primary font-poppins">
                     Compliance X
                   </SheetTitle>
                 </SheetHeader>
@@ -245,13 +243,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-r from-primary via-blue-600 to-blue-400">
         {/* Diagonal cut effect */}
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,0.1) 35px, rgba(255,255,255,0.1) 70px)",
-          }}
-        />
+        <div className="absolute inset-0 opacity-10 bg-diagonal-pattern" />
 
         <div className="container relative z-10 py-20 md:py-32">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -261,7 +253,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <h1 className="font-bold text-white text-4xl md:text-5xl leading-tight" style={poppinsStyle}>
+              <h1 className="font-bold text-white text-4xl md:text-5xl leading-tight font-poppins">
                 Compliance X
               </h1>
               <p className="text-lg text-blue-50">
@@ -380,7 +372,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center space-y-8"
           >
-            <h2 className="font-bold text-primary text-4xl" style={poppinsStyle}>
+            <h2 className="font-bold text-primary text-4xl font-poppins">
               O Que é Compliance X?
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -410,7 +402,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: i * 0.1 }}
                   className="space-y-3"
                 >
-                  <h3 className="font-bold text-primary text-lg" style={poppinsStyle}>
+                  <h3 className="font-bold text-primary text-lg font-poppins">
                     {item.title}
                   </h3>
                   <p className="text-muted-foreground">{item.desc}</p>
@@ -437,7 +429,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.3 + (i * 0.1) }}
                   className="space-y-3"
                 >
-                  <h3 className="font-bold text-primary text-lg" style={poppinsStyle}>
+                  <h3 className="font-bold text-primary text-lg font-poppins">
                     {item.title}
                   </h3>
                   <p className="text-muted-foreground">{item.desc}</p>
@@ -456,8 +448,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-bold text-primary text-4xl text-center mb-16" 
-            style={poppinsStyle}
+            className="font-bold text-primary text-4xl text-center mb-16 font-poppins" 
           >
             Como Funciona
           </motion.h2>
@@ -483,7 +474,7 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4 relative z-10 group-hover:scale-110 transition-transform">
                   {step.step}
                 </div>
-                <h3 className="font-bold text-xl mb-2" style={poppinsStyle}>{step.title}</h3>
+                <h3 className="font-bold text-xl mb-2 font-poppins">{step.title}</h3>
                 <p className="text-muted-foreground text-sm">{step.desc}</p>
               </motion.div>
             ))}
@@ -532,7 +523,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="font-bold text-primary text-4xl mb-4" style={poppinsStyle}>
+            <h2 className="font-bold text-primary text-4xl mb-4 font-poppins">
               Por que escolher o Compliance X?
             </h2>
             <p className="text-muted-foreground text-lg">
@@ -590,7 +581,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="font-bold text-primary text-4xl mb-4" style={poppinsStyle}>
+              <h2 className="font-bold text-primary text-4xl mb-4 font-poppins">
                 Calcule sua Economia
               </h2>
               <p className="text-muted-foreground text-lg">
@@ -672,8 +663,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-bold text-primary text-4xl text-center mb-16" 
-            style={poppinsStyle}
+            className="font-bold text-primary text-4xl text-center mb-16 font-poppins" 
           >
             Funcionalidades Principais
           </motion.h2>
@@ -724,7 +714,7 @@ export default function Home() {
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                     <feature.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="font-bold text-lg text-primary" style={poppinsStyle}>
+                  <h3 className="font-bold text-lg text-primary font-poppins">
                     {feature.title}
                   </h3>
                   <p className="text-muted-foreground">{feature.desc}</p>
@@ -758,8 +748,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-bold text-primary text-4xl text-center mb-16" 
-            style={poppinsStyle}
+            className="font-bold text-primary text-4xl text-center mb-16 font-poppins" 
           >
             Para Quem é Compliance X?
           </motion.h2>
@@ -834,8 +823,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-bold text-primary text-4xl text-center mb-4" 
-            style={poppinsStyle}
+            className="font-bold text-primary text-4xl text-center mb-4 font-poppins" 
           >
             Modelos de Negócio
           </motion.h2>
@@ -903,10 +891,9 @@ export default function Home() {
                   <div className="space-y-6">
                     <div>
                       <h3
-                        className={`font-bold text-2xl ${
+                        className={`font-bold text-2xl font-poppins ${
                           plan.highlighted ? "text-white" : "text-primary"
                         }`}
-                        style={poppinsStyle}
                       >
                         {plan.name}
                       </h3>
@@ -991,8 +978,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-bold text-primary text-4xl text-center mb-16" 
-            style={poppinsStyle}
+            className="font-bold text-primary text-4xl text-center mb-16 font-poppins" 
           >
             O Que Nossos Clientes Dizem
           </motion.h2>
@@ -1062,8 +1048,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-bold text-primary text-4xl text-center mb-16" 
-            style={poppinsStyle}
+            className="font-bold text-primary text-4xl text-center mb-16 font-poppins" 
           >
             Perguntas Frequentes
           </motion.h2>
@@ -1121,7 +1106,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-bold text-4xl" style={poppinsStyle}>
+            <h2 className="font-bold text-4xl font-poppins">
               Pronto para Transformar sua Conformidade?
             </h2>
             <p className="text-lg text-blue-100 max-w-2xl mx-auto mt-4">
@@ -1159,7 +1144,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="space-y-8"
             >
-              <h2 className="font-bold text-primary text-4xl" style={poppinsStyle}>
+              <h2 className="font-bold text-primary text-4xl font-poppins">
                 Entre em Contato
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -1249,7 +1234,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative z-10 max-w-2xl mx-auto space-y-8"
             >
-              <h2 className="font-bold text-3xl md:text-4xl" style={poppinsStyle}>
+              <h2 className="font-bold text-3xl md:text-4xl font-poppins">
                 Fique por dentro das novidades
               </h2>
               <p className="text-blue-100 text-lg">
@@ -1292,7 +1277,7 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Logo className="w-8 h-8" light />
-                <span className="font-bold text-white" style={poppinsStyle}>
+                <span className="font-bold text-white font-poppins">
                   Compliance X
                 </span>
               </div>
