@@ -46,6 +46,7 @@ import {
 import { Slider } from "@/components/ui/slider";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Logo } from "@/components/Logo";
+import { Link } from "wouter";
 import { motion, useSpring, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -161,6 +162,11 @@ export default function Home() {
               >
                 FAQ
               </a>
+              <Link href="/apresentacao">
+                <a className="text-foreground hover:text-primary transition-smooth font-medium text-blue-600" onClick={() => handleNavClick('apresentacao')}>
+                  Apresentação
+                </a>
+              </Link>
             </nav>
             <Button
               variant="ghost"
@@ -233,6 +239,14 @@ export default function Home() {
                   >
                     Contato
                   </a>
+                  <Link href="/apresentacao">
+                    <a 
+                      className="text-foreground hover:text-primary transition-smooth text-lg font-medium text-blue-600"
+                      onClick={() => handleNavClick('mobile-apresentacao')}
+                    >
+                      Apresentação
+                    </a>
+                  </Link>
                 </div>
               </SheetContent>
             </Sheet>
