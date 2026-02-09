@@ -96,17 +96,29 @@ export default function AnalyticsDashboard() {
       });
 
       // Atualizar métricas
-      setMetrics(prev =>
-        prev.map(m => {
+      setMetrics(prev => {
+        const newMetrics = prev.map(m => {
           if (m.name === 'Total de Cliques' && eventName.includes('click')) {
             return { ...m, value: m.value + 1 };
           }
           if (m.name === 'CTAs Clicados' && eventName === 'cta_click') {
             return { ...m, value: m.value + 1 };
           }
+          if (m.name === 'Visitantes' && eventName === 'page_view') {
+            return { ...m, value: m.value + 1 };
+          }
           return m;
-        })
-      );
+        });
+
+        // Persistir métricas no localStorage
+        const metricsData = newMetrics.reduce((acc, curr) => {
+          acc[curr.name.toLowerCase().replace(/\s+/g, '_')] = curr.value;
+          return acc;
+        }, {} as Record<string, number>);
+        localStorage.setItem('compliance_analytics_metrics', JSON.stringify(metricsData));
+
+        return newMetrics;
+      });
     };
 
     window.addEventListener('compliance_analytics_event', handleAnalyticsEvent as EventListener);

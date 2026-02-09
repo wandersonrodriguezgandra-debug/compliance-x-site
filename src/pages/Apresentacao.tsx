@@ -4,8 +4,16 @@ import { Logo } from "@/components/Logo";
 import { motion } from "framer-motion";
 import { CheckCircle2, TrendingUp, Shield, Clock, ArrowRight, Zap, Building2, Users } from "lucide-react";
 import { Link } from "wouter";
+import { useEffect } from "react";
+import { useAnalyticsContext } from "@/contexts/AnalyticsContext";
 
 export default function Apresentacao() {
+  const analytics = useAnalyticsContext();
+
+  useEffect(() => {
+    analytics.trackEvent('page_view');
+  }, [analytics]);
+
   return (
     <div className="min-h-screen bg-background font-inter">
       {/* Navigation */}

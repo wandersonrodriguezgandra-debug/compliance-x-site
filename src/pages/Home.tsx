@@ -92,6 +92,11 @@ export default function Home() {
   const analytics = useAnalyticsContext();
   const { theme, setTheme } = useTheme();
   
+  // Track page view
+  useEffect(() => {
+    analytics.trackEvent('page_view');
+  }, [analytics]);
+
   // ROI Calculator State
   const [employees, setEmployees] = useState([50]);
   const [docsPerMonth, setDocsPerMonth] = useState([100]);
@@ -1400,7 +1405,7 @@ export default function Home() {
       </footer>
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/5531986937268"
+        href="https://wa.me/5531986937268?text=Ola%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20sistema%20COMPLIANCE%20X"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 hover:bg-green-600"
