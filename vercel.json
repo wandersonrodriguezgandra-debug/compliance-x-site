@@ -1,4 +1,7 @@
 {
+  "framework": "vite",
+  "buildCommand": "pnpm run build:vercel",
+  "outputDirectory": "dist",
   "rewrites": [
     {
       "source": "/(.*)",
