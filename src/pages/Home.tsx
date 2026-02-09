@@ -1244,13 +1244,15 @@ export default function Home() {
               
               <form 
                 className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  alert("Obrigado por se inscrever! Em breve você receberá nossas novidades.");
-                }}
+                action="https://api.web3forms.com/submit" 
+                method="POST"
               >
+                <input type="hidden" name="access_key" value="f35f0e95-4e47-4dc7-9abf-3054ecea096f" />
+                <input type="hidden" name="subject" value="Novo inscrito na Newsletter" />
+                
                 <Input 
                   type="email" 
+                  name="email"
                   placeholder="Seu melhor e-mail" 
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12"
                   required
