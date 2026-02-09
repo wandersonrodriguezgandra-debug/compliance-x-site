@@ -450,6 +450,31 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Founder Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-16 pt-8 border-t border-border"
+            >
+              <div className="bg-secondary/50 rounded-2xl p-8 border border-border">
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center text-3xl font-bold text-primary">
+                    WG
+                  </div>
+                  <div className="text-left space-y-2">
+                    <p className="text-sm font-semibold text-primary uppercase tracking-wider">Conheça o Fundador</p>
+                    <h3 className="text-2xl font-bold font-poppins text-foreground">Wanderson Gandra</h3>
+                    <p className="text-muted-foreground font-medium">CEO, Fundador, Especialista em Compliance e Diretor Técnico</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
+                      "Minha missão é democratizar a gestão de conformidade, permitindo que empresas de todos os tamanhos operem com segurança, eficiência e tranquilidade."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -1366,6 +1391,9 @@ export default function Home() {
           <div className="border-t border-gray-800 pt-8 text-center text-sm">
             <p>
               &copy; 2026 Compliance X. Todos os direitos reservados.
+            </p>
+            <p className="mt-2 text-gray-500">
+              Desenvolvido por <span className="text-gray-400 font-medium">Wanderson Gandra</span>
             </p>
           </div>
         </div>
