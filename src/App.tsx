@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { AnalyticsProvider } from "./contexts/AnalyticsContext";
 import AnalyticsDashboard from "./components/AnalyticsDashboard";
 import Home from "./pages/Home";
+import Apresentacao from "./pages/Apresentacao";
 import { CookieConsent } from "./components/CookieConsent";
 
 
@@ -14,6 +15,7 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/apresentacao"} component={Apresentacao} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
